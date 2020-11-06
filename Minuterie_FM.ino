@@ -15,7 +15,7 @@ int pinState = 0, re = 0;
 unsigned long nowTime;
 
 // Déclaration des variables de temps
-int sOn, mOn, hOn, sOff, mOff, hOff ;
+unsigned long sOn, mOn, hOn, sOff, mOff, hOff ;
 
 void setup() {
 
@@ -35,7 +35,7 @@ void setup() {
   // Relais off 5 minutes (max ~50jours)
     sOff = 0;
     mOff = 5;
-    hOff = 0;
+    hOff = ;
 
     pinMode(nPinIn, INPUT_PULLUP);
     pinMode(nPinOut, OUTPUT);
@@ -48,6 +48,8 @@ void setup() {
 }
 
 void loop() {
+  Serial.begin(9600);
+  Serial.print(calcOnTime);
   // On vérifie que le In est bien alimenté
   while (digitalRead(nPinIn) == 0){
       // On vérifie le "rising" edge(re) du bouton
