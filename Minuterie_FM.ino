@@ -48,8 +48,8 @@ void setup() {
 }
 
 void loop() {
-  Serial.begin(9600);
-  Serial.print(calcOnTime);
+  // Serial.begin(9600);
+  // Serial.print(calcOnTime);
   // On vérifie que le In est bien alimenté
   while (digitalRead(nPinIn) == 0){
       // On vérifie le "rising" edge(re) du bouton
